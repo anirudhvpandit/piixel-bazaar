@@ -1,7 +1,0 @@
-.env
-node_modules
-dist
-*.log
-pycache
-postgres_data
-mongo_data
