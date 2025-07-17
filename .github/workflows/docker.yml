@@ -14,3 +14,4 @@ jobs:
           docker-compose version
       - name: Build Docker
         run: docker-compose build
+        working-directory: infra
