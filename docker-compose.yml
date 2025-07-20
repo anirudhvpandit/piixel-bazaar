@@ -37,3 +37,16 @@ services:
     image: bitnami/zookeeper:latest
     ports:
       - "2181:2181"
+  auth:
+    build: ./services/auth
+    ports:
+      - "5001:5001"
+    depends_on:
+      - postgres
+      - redis
+    environment:
+      - PORT=5001
+      - JWT_SECRET=supersecretjwt
+      - POSTGRES_URI=postgresql://user:password@postgres:5432/piiXELdb
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
